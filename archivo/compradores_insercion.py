@@ -1,7 +1,7 @@
 import os
 from io import open
 import numpy as np
-from .Validaciones import *
+from .Validaciones_compradores import *
 
 direcActual=os.path.dirname(__file__)
 direcPadre=os.path.dirname(direcActual)

@@ -105,7 +105,7 @@ def ventana_insertar_comprador():
     def validarData(cedula, rif, carnet, pasaporte, nombre_apellido, nacimiento, direccion, estado):
 
         if validarcedula(cedula) == False:
-            messagebox.showerror('EROR', 'ERROR EN CEDULA')
+            messagebox.showerror('ERROR', 'ERROR EN CEDULA')
             return False
         elif len(cedula) < 8 and len(cedula)!=0:
             while len(cedula) != 8:
@@ -157,8 +157,7 @@ def ventana_insertar_comprador():
                    rif.get(), CD.get(), pasaporte.get(),
                    nombre.get('1.0', 'end-1c'),
                    fecha.get(), direccion.get('1.0', 'end-1c'),
-                   estado.get('1.0', 'end-1c'))
-    )
+                   estado.get('1.0', 'end-1c')))
     botoncomprador.pack()
 
 
