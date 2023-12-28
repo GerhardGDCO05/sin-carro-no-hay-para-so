@@ -23,6 +23,7 @@ def ventana_insertar_ventas():
         else:
             boton_save_ventas.config(state=tkinter.DISABLED)
 
+
     insertventas = Tk()
     insertventas.title("REGISTRO DE LAS VENTAS")
     insertventas.config(bg="light blue")
