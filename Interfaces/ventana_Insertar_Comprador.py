@@ -25,7 +25,6 @@ def ventana_insertar_comprador():
 
             botoncomprador.config(state=tkinter.NORMAL)
         else:
-            print(address)
             botoncomprador.config(state=tkinter.DISABLED)
 
 
