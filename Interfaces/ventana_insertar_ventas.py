@@ -1,30 +1,27 @@
 import tkinter
 from tkinter import *
 from tkinter import messagebox
-
-from archivo.Validaciones_ventas import (validarfactura,  validarfechacompra,
-                                         validarcedulacomprador,validarcodigo, validarmodelo)
+from archivo.Validaciones_ventas import (validarfactura, validarfechacompra,
+                                         validarcedulacomprador, validarcodigo, validarmodelo)
 from archivo.ventas_insercion import Data_ventas
 
 
 def ventana_insertar_ventas():
-    def verificar_contenido_ventas(*args):
-        fac=factura.get()
-        fechacomp=fecha_de_la_compra.get()
-        cedulacomp=cedula_del_comprador.get()
-        codvehi=codigo_del_vehiculo.get()
-        modvehi=modelo_del_vehiculo.get()
-
-        if (fac.strip()!='' and fac.strip()!=' '
-                and fechacomp.strip()!='' and fechacomp.strip()!=' '
-                and cedulacomp.strip()!='' and cedulacomp.strip()!=' '
-                and codvehi.strip()!='' and codvehi.strip()!=' '
-                and modvehi.strip()!='' and modvehi.strip()!=' '):
-
+    def contenido_ventas(*args):
+        print("aqui ay")
+        fac = factura.get()
+        fechacompra = fecha_de_la_compra.get()
+        cedulacompra = cedula_del_comprador.get()
+        codigovehiculo = codigo_del_vehiculo.get(),
+        modelovehiculo = modelo_del_vehiculo.get()
+        if (fac.strip() != '' and fac.strip() != ' '
+                and fechacompra.strip() != '' and fechacompra.strip() != ' '
+                and cedulacompra.strip() != '' and cedulacompra.strip() != ' '
+                and codigovehiculo.strip() != '' and codigovehiculo.strip() != ' '
+                and modelovehiculo.strip() != '' and modelovehiculo.strip() != ' '):
             boton_save_ventas.config(state=tkinter.NORMAL)
         else:
             boton_save_ventas.config(state=tkinter.DISABLED)
-
 
     insertventas = Tk()
     insertventas.title("REGISTRO DE LAS VENTAS")
@@ -41,31 +38,35 @@ def ventana_insertar_ventas():
     facturalabel.grid(row=0, column=0, padx=10, pady=10)
     factura = Entry(ventasframe, background="light blue")
     factura.grid(row=0, column=1, padx=10, pady=10)
-    factura.bind('<<Modified>>',verificar_contenido_ventas)
+    factura.bind('<<Modified>>', contenido_ventas)
+
     # -------------------------Fecha de LA COMPRA------------------------------
     fecha_compra_label = Label(ventasframe, text="FECHA DE" "\n""LA COMPRA")
     fecha_compra_label.grid(row=1, column=0, padx=12, pady=12)
     fecha_de_la_compra = Entry(ventasframe, background="light blue")
     fecha_de_la_compra.grid(row=1, column=1, padx=12, pady=12)
-    fecha_de_la_compra.bind('<<Modified>>', verificar_contenido_ventas)
+    fecha_de_la_compra.bind('<<Modified>>', contenido_ventas)
+
     # ---------------------cedula del comprador-----------------------------------------
     cedula_del_comprador_label = Label(ventasframe, text="CEDULA DEL \n COMPRADOR")
     cedula_del_comprador_label.grid(row=2, column=0, padx=10, pady=10)
     cedula_del_comprador = Entry(ventasframe, background="light blue")
     cedula_del_comprador.grid(row=2, column=1, padx=10, pady=10)
-    cedula_del_comprador.bind('<<Modified>>', verificar_contenido_ventas)
+    cedula_del_comprador.bind('<<Modified>>', contenido_ventas)
+
     # ---------------------------cedula_del_comprador---------------------------
     codigo_del_vehiculo_label = Label(ventasframe, text="CODIGO DEL \n VEHICULO")
     codigo_del_vehiculo_label.grid(row=3, column=0, padx=10, pady=10)
     codigo_del_vehiculo = Entry(ventasframe, background="light blue")
     codigo_del_vehiculo.grid(row=3, column=1, padx=10, pady=10)
-    codigo_del_vehiculo.bind('<<Modified>>', verificar_contenido_ventas)
+    codigo_del_vehiculo.bind('<<Modified>>', contenido_ventas)
+
     # ---------------------------MODELO DEL vehiculo---------------------------
     modelo_del_vehiculo_label = Label(ventasframe, text='MODELO DEL \n VEHICULO')
     modelo_del_vehiculo_label.grid(row=4, column=0, padx=10, pady=10)
     modelo_del_vehiculo = Entry(ventasframe, background='light blue')
     modelo_del_vehiculo.grid(row=4, column=1, padx=10, pady=10)
-    modelo_del_vehiculo.bind('<<Modified>>', verificar_contenido_ventas)
+    modelo_del_vehiculo.bind('<<Modified>>', contenido_ventas)
 
     # ---------------------------------------------------------------------------
     def validarData_ventas(factura, fecha_compra, cedula_comprador, codigo_comprador, modelo_vehiculo):
@@ -79,6 +80,8 @@ def ventana_insertar_ventas():
         if validarfechacompra(fecha_compra) == False:
             messagebox.showerror('ERROR', 'ERROR EN LA FECHA \n '
                                           'INGRESE LA FECHA EN ESTE FORMATO DDMMYYYY ')
+            return False
+
         elif len(fecha_compra) < 8 and len(fecha_compra) != 0:
             while len(fecha_compra) != 8:
                 fecha_compra = '0' + fecha_compra
@@ -86,17 +89,21 @@ def ventana_insertar_ventas():
         if validarcedulacomprador(cedula_comprador) == False:
             messagebox.showerror('ERROR', 'ERROR EN LA CEDULA \n '
                                           'MAXIMO 8 DIGITOS')
+            return False
+
         elif len(cedula_comprador) < 8 and len(cedula_comprador) != 0:
             while len(cedula_comprador) != 8:
                 cedula_comprador = '0' + cedula_comprador
 
-        if validarcodigo(codigo_comprador)==False:
+        if validarcodigo(codigo_comprador) == False:
             messagebox.showerror('ERROR', 'ERROR EN EL CODIGO \n '
                                           'MAXIMO 3 DIGITOS')
+            return False
 
-        if validarmodelo(modelo_vehiculo)==False:
+        if validarmodelo(modelo_vehiculo) == False:
             messagebox.showerror('ERROR', 'ERROR EN EL MODELO \n '
                                           'MAXIMO 20 DIGITOS')
+            return False
 
         Data_ventas(factura, fecha_compra, cedula_comprador, codigo_comprador, modelo_vehiculo)
         messagebox.showinfo('LOGRADO', 'REGISTRO EXITOSO')
@@ -106,12 +113,9 @@ def ventana_insertar_ventas():
         insertventas,
         text='GUARDAR',
         state=tkinter.DISABLED,
-        command=lambda: validarData_ventas(factura.get(),
-                                           fecha_de_la_compra.get(),
-                                           cedula_del_comprador.get(),
-                                           codigo_del_vehiculo.get(),
-                                           modelo_del_vehiculo.get()
-                                           ))
+        command=lambda: validarData_ventas(factura.get(), fecha_de_la_compra.get(),
+                                           cedula_del_comprador.get(), codigo_del_vehiculo.get(),
+                                           modelo_del_vehiculo.get()))
     boton_save_ventas.pack()
 
     insertventas.mainloop()

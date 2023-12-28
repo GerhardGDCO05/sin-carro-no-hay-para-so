@@ -3,30 +3,29 @@ from tkinter import *
 from tkinter import messagebox
 from archivo.compradores_insercion import *
 
-def ventana_insertar_comprador():
 
+def ventana_insertar_comprador():
     def verificar_contenido(*args):
-        address=direccion.get('1.0', 'end-1c')
-        name=nombre.get('1.0', 'end-1c')
-        cedu=cedula.get()
-        numrif=rif.get()
-        cardip=CD.get()
-        passport=pasaporte.get()
-        fechanaci=fecha.get()
-        stade=estado.get('1.0', 'end-1c')
+        address = direccion.get('1.0', 'end-1c')
+        name = nombre.get('1.0', 'end-1c')
+        cedu = cedula.get()
+        numrif = rif.get()
+        cardip = CD.get()
+        passport = pasaporte.get()
+        fechanaci = fecha.get()
+        stade = estado.get('1.0', 'end-1c')
         if (address.strip() != '' and address.strip() != ' '
                 and name.strip() != '' and name.strip() != ' '
                 and cedu.strip() != '' and cedu.strip() != ' '
                 and numrif.strip() != '' and numrif.strip() != ' '
-                and cardip.strip()!='' and cardip.strip()!=' '
-                and passport.strip()!='' and passport.strip()!=' '
-                and fechanaci.strip()!='' and fechanaci.strip()!=' '
-                and stade.strip()!='' and stade.strip()!=' '):
+                and cardip.strip() != '' and cardip.strip() != ' '
+                and passport.strip() != '' and passport.strip() != ' '
+                and fechanaci.strip() != '' and fechanaci.strip() != ' '
+                and stade.strip() != '' and stade.strip() != ' '):
 
             botoncomprador.config(state=tkinter.NORMAL)
         else:
             botoncomprador.config(state=tkinter.DISABLED)
-
 
     datos_comprador = Tk()
     datos_comprador.title("REGISTRO DE LOS COMPRADORES")
@@ -99,6 +98,7 @@ def ventana_insertar_comprador():
     scroll = Scrollbar(datosframe, command=estado.yview)
     scroll.grid(row=7, column=2, sticky="nsew")
     estado.config(yscrollcommand=scroll.set)
+
     # ---------------------------------------------------------------------
 
     def validarData(cedula, rif, carnet, pasaporte, nombre_apellido, nacimiento, direccion, estado):
@@ -106,15 +106,15 @@ def ventana_insertar_comprador():
         if validarcedula(cedula) == False:
             messagebox.showerror('ERROR', 'ERROR EN CEDULA')
             return False
-        elif len(cedula) < 8 and len(cedula)!=0:
+        elif len(cedula) < 8 and len(cedula) != 0:
             while len(cedula) != 8:
                 cedula = "0" + cedula
 
-        if(validarRif(rif)==False):
-            messagebox.showerror('ERROR','ERROR EN RIF')
+        if (validarRif(rif) == False):
+            messagebox.showerror('ERROR', 'ERROR EN RIF')
             return False
 
-        if(validarcarnet(carnet)==False):
+        if (validarcarnet(carnet) == False):
             messagebox.showerror('ERROR', 'ERROR EN CARNET DIPLOMATICO')
             return False
 
@@ -130,18 +130,17 @@ def ventana_insertar_comprador():
             messagebox.showerror('ERROR', 'ERROR EN FECHA DE NACIMIENTO \n'
                                           'INGRESE LA FECHA DE NACIMIENTO EN ESTE FORMATO DDMMYYYY')
             return False
-        elif len(nacimiento) < 8 and len(nacimiento)!=0:
+        elif len(nacimiento) < 8 and len(nacimiento) != 0:
             while len(nacimiento) != 8:
                 nacimiento = "0" + nacimiento
 
-        if validardireccion(direccion)==False:
+        if validardireccion(direccion) == False:
             messagebox.showerror('ERROR', 'ERROR EN DIRECCION \n MAXIMO 50 CARACTERES')
             return False
 
-        if validarestado(estado)==False:
+        if validarestado(estado) == False:
             messagebox.showerror('ERROR', 'ERROR EN ESTADO \n MAXIMO 15 CARACTERES')
             return False
-
 
         insertData(cedula, rif, carnet, pasaporte,
                    nombre_apellido, nacimiento, direccion, estado)
@@ -152,13 +151,11 @@ def ventana_insertar_comprador():
         datos_comprador,
         text="GUARDAR",
         state=tkinter.DISABLED,
-        command=lambda :validarData(cedula.get(),
-                   rif.get(), CD.get(), pasaporte.get(),
-                   nombre.get('1.0', 'end-1c'),
-                   fecha.get(), direccion.get('1.0', 'end-1c'),
-                   estado.get('1.0', 'end-1c')))
+        command=lambda: validarData(cedula.get(),
+                                    rif.get(), CD.get(), pasaporte.get(),
+                                    nombre.get('1.0', 'end-1c'),
+                                    fecha.get(), direccion.get('1.0', 'end-1c'),
+                                    estado.get('1.0', 'end-1c')))
     botoncomprador.pack()
-
-
 
     datos_comprador.mainloop()
