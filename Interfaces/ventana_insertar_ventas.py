@@ -23,7 +23,6 @@ def ventana_insertar_ventas():
         else:
             boton_save_ventas.config(state=tkinter.DISABLED)
 
-
     insertventas = Tk()
     insertventas.title("REGISTRO DE LAS VENTAS")
     insertventas.config(bg="light blue")
@@ -113,7 +112,7 @@ def ventana_insertar_ventas():
     boton_save_ventas = Button(
         insertventas,
         text='GUARDAR',
-        state=tkinter.DISABLED,
+
         command=lambda: validarData_ventas(factura.get(), fecha_de_la_compra.get(),
                                            cedula_del_comprador.get(), codigo_del_vehiculo.get(),
                                            modelo_del_vehiculo.get()))
