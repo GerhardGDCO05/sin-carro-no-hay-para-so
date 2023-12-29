@@ -1,7 +1,12 @@
 from tkinter import messagebox
 from tkinter import *
+
+
 def ventana_insertar_vehiculo():
-    insertvehi=Tk()
-    insertvehi.title("REGISTRO VEHICULO")
-    insertvehi.config(bg="light blue")
-    insertvehi.pack()
+    insert_vehi = Tk()
+    insert_vehi.title("REGISTRO VEHICULO")
+    insert_vehi.config(bg="light blue")
+    insert_vehi_label=Label(insert_vehi,text='REGISTRO DE VEHICULOS',font='')
+
+
+

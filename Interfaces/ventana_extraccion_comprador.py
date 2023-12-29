@@ -1,6 +1,5 @@
 import tkinter as tk
 from tkinter import ttk
-from tkinter import messagebox
 from archivo.compradores_extraccion import extractInfo
 
 # Simulando la lista de diccionarios

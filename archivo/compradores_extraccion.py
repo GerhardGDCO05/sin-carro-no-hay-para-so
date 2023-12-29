@@ -1,5 +1,4 @@
 import ast
-import numpy as np
 import os
 
 dictcompradores = []
@@ -10,7 +9,6 @@ URLFile = os.path.join(direcPadre,  'archivo_de_los_compradores.txt')
 
 
 def extractInfo():
-    print(URLFile)
     with open(URLFile, "r") as f:
         lineas=f.readlines()
         if len(lineas) != 0:

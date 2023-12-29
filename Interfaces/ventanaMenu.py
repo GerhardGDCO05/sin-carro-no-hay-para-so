@@ -1,4 +1,3 @@
-from tkinter import *
 from Interfaces.ventana_Insertar_Comprador import *
 from Interfaces.ventana_extraccion_comprador import *
 from Interfaces.ventana_insertar_vehiculo import *
