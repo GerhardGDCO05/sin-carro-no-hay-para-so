@@ -21,3 +21,8 @@ def Data_ventas(factura, fecha_compra, cedula_comprador, codigo_comprador, model
     archivo_ventas=open(URLventas,"a")
     archivo_ventas.writelines(arregloventas)
     archivo_ventas.close()
+
+    numero = 123456.78
+    formato_numero = "{:,.2f}".format(numero)
+
+    print(formato_numero)

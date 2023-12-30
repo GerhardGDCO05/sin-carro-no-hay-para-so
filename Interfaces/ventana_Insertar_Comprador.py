@@ -1,6 +1,11 @@
 import tkinter
 from tkinter import *
 from tkinter import messagebox
+
+from archivo.Validaciones_compradores import (validarcedula, validarcarnet,
+                                              validarpasaporte, validarnombre,
+                                              validarfecha, validardireccion, validarestado,
+                                              validarRif)
 from archivo.compradores_insercion import *
 
 

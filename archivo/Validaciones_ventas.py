@@ -1,7 +1,6 @@
 def validarfactura(factura):
 
     if len(factura) > 5 or len(factura) == 0:
-        print("heyeyea")
         return False
     return True
 
