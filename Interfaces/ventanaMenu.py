@@ -11,8 +11,8 @@ def ventana_Menu():
     concesionario = Tk()
     concesionario.title("SIN CARRO NO HAY PARAISO")
     concesionario.config(bg="light blue", relief="groove", bd="20")
-    concelabel = Label(concesionario, text="CONCESIONARIO SIN CARRO NO HAY PARAISO", font=("times new roman", 12),
-                       bg="light blue", justify="center")
+    concelabel = Label(concesionario, text="CONCESIONARIO SIN CARRO NO HAY PARAISO",
+                       font=("times new roman", 12),bg="light blue", justify="center")
     concelabel.pack()
 
     miframe = Frame(concesionario)
@@ -103,7 +103,6 @@ def ventana_Menu():
         infvehiframe = Frame(vehiculo)
         infvehiframe.pack()
         infvehiframe.place(x=60, y=100)
-
         def botoninfveh():
             ventana_extraccion_vehiculo()
 
