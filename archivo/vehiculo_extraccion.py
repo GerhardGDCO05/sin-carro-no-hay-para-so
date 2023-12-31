@@ -28,21 +28,38 @@ def generar_codigo_vehiculo():
     return codigo
 
 
-def estatus_vendidos(codigo_comprador):
+def cambio_estatus(codigo_comprador):
     dic_vendidos = []
     str_vendidos = []
-    with open(pag, 'r') as vendido:
-        linea = vendido.readlines()
-    with open(pag, 'w') as vendido:
+    with open(pag, 'r') as cambio:
+        linea = cambio.readlines()
+    with open(pag, 'w') as cambio:
         for i in linea:
             dic_vendidos.append(ast.literal_eval(i))
 
         for i in dic_vendidos:
-            if i['CODIGO']==codigo_comprador:
-                i['ESTATUS']=1
+            if i['CODIGO'] == codigo_comprador:
+                i['ESTATUS'] = 1
 
         for i in dic_vendidos:
-            str_vendidos.append(str(i)+'\n')
+            str_vendidos.append(str(i) + '\n')
 
-        vendido.writelines(str_vendidos)
+        cambio.writelines(str_vendidos)
 
+
+def estatus_disponibles():
+    diccionario=[]
+    with open(pag, 'r') as archivo:
+        # Inicializa el contador
+        lineas_con_estatus_1 = 0
+
+        # Lee cada línea del archivo
+        for linea in archivo:
+            # Convierte la línea en un diccionario utilizando
+            diccionario.append(ast.literal_eval(linea))
+
+        for i in diccionario:
+            # Verifica si el diccionario tiene 'ESTATUS' igual a 0
+            if i['ESTATUS'] == 0:
+                lineas_con_estatus_1 += 1
+    return lineas_con_estatus_1

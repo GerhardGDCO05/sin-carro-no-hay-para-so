@@ -2,7 +2,7 @@ import os
 from io import open
 import numpy as np
 from .Validaciones_ventas import *
-from .vehiculo_extraccion import estatus_vendidos
+from .vehiculo_extraccion import cambio_estatus
 
 direc_ventas_actual=os.path.dirname(__file__)
 direc_ventas_padre=os.path.dirname(direc_ventas_actual)
@@ -10,7 +10,9 @@ direc_ventas_padre=os.path.dirname(direc_ventas_actual)
 URLventas=os.path.join(direc_ventas_padre,'archivo_de_las_ventas.txt')
 def Data_ventas(factura, fecha_compra, cedula_comprador, codigo_comprador, modelo_vehiculo):
 
-    estatus_vendidos(codigo_comprador)
+    cambio_estatus(codigo_comprador)
+
+
 
     listaventas=[]
     vendidos={

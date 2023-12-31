@@ -64,7 +64,7 @@ def ventana_insertar_vehiculo():
             return False
 
         if validar_precio(precio) == False:
-            messagebox.showerror('ERROR', 'ERROR EN EL PRECIO  ')
+            messagebox.showerror('ERROR', 'ERROR EN EL PRECIO \n')
             return False
         else:
             formato_precio = '{:,.2f}'.format(float(precio))

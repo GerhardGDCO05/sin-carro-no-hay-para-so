@@ -2,11 +2,11 @@ from tkinter import *
 from tkinter import messagebox
 from archivo.Validaciones_ventas import (validarfactura, validarfechacompra,
                                          validarcedulacomprador, validarcodigo, validarmodelo)
+from archivo.vehiculo_extraccion import estatus_disponibles
 from archivo.ventas_insercion import Data_ventas
 
 
 def ventana_insertar_ventas():
-
     insertventas = Tk()
     insertventas.title("REGISTRO DE LAS VENTAS")
     insertventas.config(bg="light blue")
@@ -83,10 +83,13 @@ def ventana_insertar_ventas():
                                           'MAXIMO 20 DIGITOS')
             return False
 
-
+        disponibles=estatus_disponibles()
+        if disponibles!=0:
+            disponibles=disponibles-1
 
         Data_ventas(factura, fecha_compra, cedula_comprador, codigo_comprador, modelo_vehiculo)
-        messagebox.showinfo('LOGRADO', 'REGISTRO EXITOSO')
+        messagebox.showinfo('LOGRADO','REGISTRO EXITOSO')
+        messagebox.showinfo('VEHICULOS DISPONIBLES', disponibles)
         insertventas.destroy()
 
     boton_save_ventas = Button(
