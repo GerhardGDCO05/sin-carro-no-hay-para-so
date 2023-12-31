@@ -83,6 +83,8 @@ def ventana_insertar_ventas():
                                           'MAXIMO 20 DIGITOS')
             return False
 
+
+
         Data_ventas(factura, fecha_compra, cedula_comprador, codigo_comprador, modelo_vehiculo)
         messagebox.showinfo('LOGRADO', 'REGISTRO EXITOSO')
         insertventas.destroy()
