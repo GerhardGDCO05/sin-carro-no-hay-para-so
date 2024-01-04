@@ -56,7 +56,7 @@ def ventana_insertar_comprador():
     rif.grid(row=1, column=1, padx=12, pady=12)
     rif.bind('<<Modified>>', verificar_contenido)
     # -------------------carnet diplomatico----------------
-    CDlabel = Label(datosframe, text="CARNET" "\n""DIPLOMATICO")
+    CDlabel = Label(datosframe, text="CARNET \n DIPLOMATICO")
     CDlabel.grid(row=2, column=0)
     CD = Entry(datosframe, background="light blue")
     CD.grid(row=2, column=1)

@@ -36,10 +36,18 @@ def ventana_extraccion_comprador():
     for col in columns:
         infocomp.heading(col, text=col)
 
-        # Agregar datos
+    # Agregar datos
     for data in compradoresData:
         infocomp.insert('', 'end', values=list(data.values()))
 
-    infocomp.grid()
+    # Configurar la altura para mostrar todas las filas
+
+    infocomp['height'] = len(compradoresData) + 1
+
+    infocomp.grid(sticky='nsew')
+
+    # Configurar el peso de las filas y columnas para que se expandan con la ventana
+    info_compradores.grid_rowconfigure(0, weight=1)
+    info_compradores.grid_columnconfigure(0, weight=1)
 
     info_compradores.mainloop()

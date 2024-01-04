@@ -2,7 +2,7 @@ from tkinter import *
 from tkinter import messagebox
 from archivo.Validaciones_ventas import (validarfactura, validarfechacompra,
                                          validarcedulacomprador, validarcodigo, validarmodelo)
-from archivo.vehiculo_extraccion import estatus_disponibles
+
 from archivo.ventas_insercion import Data_ventas
 
 
@@ -59,7 +59,6 @@ def ventana_insertar_ventas():
             messagebox.showerror('ERROR', 'ERROR EN LA FECHA \n '
                                           'INGRESE LA FECHA EN ESTE FORMATO DDMMYYYY ')
             return False
-
         elif len(fecha_compra) < 8 and len(fecha_compra) != 0:
             while len(fecha_compra) != 8:
                 fecha_compra = '0' + fecha_compra
@@ -83,13 +82,10 @@ def ventana_insertar_ventas():
                                           'MAXIMO 20 DIGITOS')
             return False
 
-        disponibles=estatus_disponibles()
-        if disponibles!=0:
-            disponibles=disponibles-1
+
 
         Data_ventas(factura, fecha_compra, cedula_comprador, codigo_comprador, modelo_vehiculo)
-        messagebox.showinfo('LOGRADO','REGISTRO EXITOSO')
-        messagebox.showinfo('VEHICULOS DISPONIBLES', disponibles)
+        messagebox.showinfo('LOGRADO', 'REGISTRO EXITOSO')
         insertventas.destroy()
 
     boton_save_ventas = Button(

@@ -2,10 +2,12 @@ import os
 from io import open
 import numpy as np
 
-direcActual=os.path.dirname(__file__)
-direcPadre=os.path.dirname(direcActual)
+direcActual = os.path.dirname(__file__)
+direcPadre = os.path.dirname(direcActual)
 
-URLFile = os.path.join(direcPadre,  'archivo_de_los_compradores.txt')
+URLFile = os.path.join(direcPadre, 'archivo_de_los_compradores.txt')
+
+
 def insertData(cedula, rif, carnet, pasaporte, nombre_apellido, nacimiento, direccion, estado):
     listcompradores = []
     comprador = {
@@ -20,7 +22,7 @@ def insertData(cedula, rif, carnet, pasaporte, nombre_apellido, nacimiento, dire
 
     listcompradores.append(str(comprador) + '\n')
 
-    arreglocompradores=np.array(listcompradores)
+    arreglocompradores = np.array(listcompradores)
 
     archivocompradores = open(URLFile, "a")
     archivocompradores.writelines(arreglocompradores)

@@ -8,7 +8,6 @@ data_vehiculo = extrac_vehiculo()
 def ventana_extraccion_vehiculo():
     extraccion_vehiculo = tk.Tk()
     extraccion_vehiculo.title("INFORMACION DE LOS VEHICULOS")
-    extraccion_vehiculo.resizable(0,0)
     columna = ('CODIGO',
                "MARCA",
                "MODELO",
@@ -31,6 +30,16 @@ def ventana_extraccion_vehiculo():
 
     for data in data_vehiculo:
         info_vehiculo.insert('', 'end', values=list(data.values()))
+
+    # Configurar la altura para mostrar todas las filas
+    # Utilizar len(data_vehiculo) + 1 para asegurarse de que se muestren todas las filas
+    info_vehiculo['height']=len(data_vehiculo)+1
+
+    info_vehiculo.grid(sticky="nsew")
+
+    # Configurar el peso de las filas y columnas para que se expandan con la ventana
+    extraccion_vehiculo.grid_rowconfigure(0, weight=1)
+    extraccion_vehiculo.grid_columnconfigure(0, weight=1)
 
     info_vehiculo.grid()
     extraccion_vehiculo.mainloop()
