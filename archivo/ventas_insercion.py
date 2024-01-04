@@ -19,7 +19,7 @@ def Data_ventas(factura, fecha_compra, cedula_comprador, codigo_comprador, model
         "FACTURA":factura,
         "FECHA DE LA COMPRA":fecha_compra,
         "CEDULA DEL COMPRADOR":cedula_comprador,
-        "CODIGO ":codigo_comprador,
+        "CODIGO":codigo_comprador,
         "MODELO": modelo_vehiculo}
     listaventas.append(str(vendidos)+'\n')
     arregloventas=np.array(listaventas)

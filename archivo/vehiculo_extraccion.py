@@ -149,8 +149,8 @@ def cantidad_vendidos():
 
 
 def carro_mas_vendido():
-    lista_estatus=[]
-    dic_vendidos=[]
+    lista_estatus = []
+    dic_vendidos = []
     with open(pag, 'r') as m:
         vendidos = m.readlines()
 
@@ -161,21 +161,19 @@ def carro_mas_vendido():
             if i['ESTATUS'] == 1:
                 lista_estatus.append(i)
 
-        contCars=[]
-        cars=[]
+        contCars = []
+        cars = []
         for i in lista_estatus:
-            i_copy=i.copy()
+            i_copy = i.copy()
             i_copy.pop('CODIGO')
-            if i_copy in cars :
+            if i_copy in cars:
 
-                car_index=cars.index(i_copy)
-                contCars[car_index]['CANTIDAD_VENTAS']+=1
+                car_index = cars.index(i_copy)
+                contCars[car_index]['CANTIDAD_VENTAS'] += 1
             else:
                 cars.append(i_copy.copy())
                 i_copy['CANTIDAD_VENTAS'] = 1
                 contCars.append(i_copy)
 
-        contCars=sorted(contCars,key=lambda x: x['CANTIDAD_VENTAS'], reverse=True)
+        contCars = sorted(contCars, key=lambda x: x['CANTIDAD_VENTAS'], reverse=True)
     return contCars
-
-

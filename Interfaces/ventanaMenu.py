@@ -4,7 +4,7 @@ from Interfaces.ventana_insertar_vehiculo import *
 from Interfaces.ventana_extraccion_vehiculo import *
 from Interfaces.ventana_insertar_ventas import *
 from Interfaces.ventana_extraccion_ventas import *
-from Interfaces.ventana_mas_vendido import mas_menos_vendido
+from Interfaces.top_ventas import mas_menos_vendido
 from archivo.vehiculo_extraccion import cantidad_por_vender, cantidad_vendidos
 
 

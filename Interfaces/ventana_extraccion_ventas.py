@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
 
-from Interfaces.ventana_mas_vendido import fecha_vendido
+from Interfaces.top_ventas import fecha_vendido
 from archivo.Ventas_extraccion import extracventas
 from tkinter import *
 
