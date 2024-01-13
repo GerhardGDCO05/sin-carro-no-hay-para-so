@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="870090c4-5588-41a8-aedf-9daf5a79cb80" name="Changes" comment="funcion y contador de los vehiculos disponibles">
+      <change beforePath="$PROJECT_DIR$/archivo_de_las_ventas.txt" beforeDir="false" afterPath="$PROJECT_DIR$/archivo_de_las_ventas.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/archivo_de_los_compradores.txt" beforeDir="false" afterPath="$PROJECT_DIR$/archivo_de_los_compradores.txt" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;GerhardGDCO05&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="586e5f7c-c360-4b18-b692-50b221b6bad9" />
+        <option name="url" value="https://github.com/GerhardGDCO05/sin-carro-no-hay-para-so.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2a8c08yo5Ct2Xalg9WAejS4xQUj" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Usuario/Desktop/Project/sin-carro-no-hay-para-so&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="sin-carro-no-hay-para-so" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="870090c4-5588-41a8-aedf-9daf5a79cb80" name="Changes" comment="" />
+      <created>1703703421736</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1703703421736</updated>
+      <workItem from="1703703431558" duration="313000" />
+      <workItem from="1703703979207" duration="351000" />
+      <workItem from="1703705209888" duration="14860000" />
+      <workItem from="1703727188803" duration="820000" />
+      <workItem from="1703799140642" duration="8584000" />
+      <workItem from="1703809854530" duration="739000" />
+      <workItem from="1703811574870" duration="1532000" />
+      <workItem from="1703886220036" duration="3866000" />
+      <workItem from="1703891472051" duration="3520000" />
+      <workItem from="1703895995600" duration="836000" />
+      <workItem from="1703896862502" duration="42000" />
+      <workItem from="1703897932456" duration="2449000" />
+      <workItem from="1703900747486" duration="815000" />
+      <workItem from="1703946412755" duration="11819000" />
+      <workItem from="1703982017976" duration="3390000" />
+      <workItem from="1703986079292" duration="114000" />
+      <workItem from="1704049537082" duration="5156000" />
+      <workItem from="1704204154224" duration="3646000" />
+      <workItem from="1704208342122" duration="1421000" />
+      <workItem from="1704210472166" duration="2193000" />
+      <workItem from="1704212890118" duration="1556000" />
+      <workItem from="1704231797812" duration="1713000" />
+      <workItem from="1704234517450" duration="11233000" />
+      <workItem from="1704246738706" duration="811000" />
+      <workItem from="1704285384765" duration="364000" />
+      <workItem from="1704285822018" duration="6426000" />
+      <workItem from="1704321557893" duration="8838000" />
+      <workItem from="1704377578002" duration="11116000" />
+      <workItem from="1704476372342" duration="931000" />
+    </task>
+    <task id="LOCAL-00001" summary="Git ignore">
+      <option name="closed" value="true" />
+      <created>1703703655042</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1703703655042</updated>
+    </task>
+    <task id="LOCAL-00002" summary="archivo innecesario">
+      <option name="closed" value="true" />
+      <created>1703704095155</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1703704095155</updated>
+    </task>
+    <task id="LOCAL-00003" summary="archivo innecesario">
+      <option name="closed" value="true" />
+      <created>1703721233576</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1703721233576</updated>
+    </task>
+    <task id="LOCAL-00004" summary="modificaciones">
+      <option name="closed" value="true" />
+      <created>1703728009319</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1703728009319</updated>
+    </task>
+    <task id="LOCAL-00005" summary="modificaciones">
+      <option name="closed" value="true" />
+      <created>1703807032870</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1703807032870</updated>
+    </task>
+    <task id="LOCAL-00006" summary="validaciones y logica de insercion de ventas">
+      <option name="closed" value="true" />
+      <created>1703807115906</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1703807115906</updated>
+    </task>
+    <task id="LOCAL-00007" summary="validaciones y logica de insercion de ventas">
+      <option name="closed" value="true" />
+      <created>1703891427677</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1703891427677</updated>
+    </task>
+    <task id="LOCAL-00008" summary="modificaciones logicas y de errores de sintaxis">
+      <option name="closed" value="true" />
+      <created>1703891574368</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1703891574368</updated>
+    </task>
+    <task id="LOCAL-00009" summary="modificaciones logicas Y Creacion de la interfas de vehiculo">
+      <option name="closed" value="true" />
+      <created>1703901535883</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1703901535883</updated>
+    </task>
+    <task id="LOCAL-00010" summary="modificaciones logicas">
+      <option name="closed" value="true" />
+      <created>1703901562029</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1703901562029</updated>
+    </task>
+    <task id="LOCAL-00011" summary="logica e interfasde vehiculos CREACION DE archivo de vehiculos e insercion y extraccion de informacion de vehiculos">
+      <option name="closed" value="true" />
+      <created>1703967002878</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1703967002878</updated>
+    </task>
+    <task id="LOCAL-00012" summary="alteracion de estatus de los vehiculos modificacion desde el registro de ventas">
+      <option name="closed" value="true" />
+      <created>1703986189801</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1703986189801</updated>
+    </task>
+    <task id="LOCAL-00013" summary="funcion y contador de los vehiculos disponibles">
+      <option name="closed" value="true" />
+      <created>1704054736556</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1704054736556</updated>
+    </task>
+    <task id="LOCAL-00014" summary="funcion y contador de los vehiculos disponibles">
+      <option name="closed" value="true" />
+      <created>1704330708322</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1704330708322</updated>
+    </task>
+    <task id="LOCAL-00015" summary="funcion y contador de los vehiculos disponibles">
+      <option name="closed" value="true" />
+      <created>1704388155907</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1704388155907</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Git ignore" />
+    <MESSAGE value="archivo innecesario" />
+    <MESSAGE value="modificaciones" />
+    <MESSAGE value="validaciones y logica de insercion de ventas" />
+    <MESSAGE value="modificaciones logicas y de errores de sintaxis" />
+    <MESSAGE value="modificaciones logicas Y Creacion de la interfas de vehiculo" />
+    <MESSAGE value="modificaciones logicas" />
+    <MESSAGE value="logica e interfasde vehiculos CREACION DE archivo de vehiculos e insercion y extraccion de informacion de vehiculos" />
+    <MESSAGE value="alteracion de estatus de los vehiculos modificacion desde el registro de ventas" />
+    <MESSAGE value="funcion y contador de los vehiculos disponibles" />
+    <option name="LAST_COMMIT_MESSAGE" value="funcion y contador de los vehiculos disponibles" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/sin_carro_no_hay_para_so$main.coverage" NAME="main Coverage Results" MODIFIED="1704477202319" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>

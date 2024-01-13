@@ -48,22 +48,29 @@ def cambio_estatus(codigo_comprador):
 
         cambio.writelines(str_vendidos)
 
-
+#funcion que muestra la informacion de los disponibles
 def cantidad_por_vender():
+
+    #creamos la ventana y la tabla
     por_vender = Tk()
     por_vender.title("VEHICULOS DISPONIBLES")
     por_vender.config(bg="light blue")
     dic_por_vender = []
     dic_disponibles = []
+
+    #abrimos el archivo
     with open(pag, 'r') as d:
         no_vendidos = d.readlines()
 
+        #recorremos la informacion y la guardamos en la primera lista 
         for i in no_vendidos:
             dic_disponibles.append(ast.literal_eval(i))
 
+        #recorremos la lista y validamos los que tengan estatus 0 y los guardamos en la segunda lista
         for i in dic_disponibles:
             if i['ESTATUS'] == 0:
                 dic_por_vender.append(i)
+
 
     columna = ('CODIGO',
                "MARCA",
@@ -73,6 +80,7 @@ def cantidad_por_vender():
                "PRECIO",
                'ESTATUS')
 
+    #creamos la tabla
     info_disp = ttk.Treeview(por_vender, columns=columna, show='headings')
     info_disp.column('CODIGO', width=75)
     info_disp.column('YEAR', width=75)
@@ -81,9 +89,11 @@ def cantidad_por_vender():
     info_disp.column('ESTATUS', width=75)
     info_disp.column('PRECIO', width=100)
 
+    #ordenamos los encabezados
     for col in columna:
         info_disp.heading(col, text=col)
 
+    #ingresamos la informacion en la tabla
     for data in dic_por_vender:
         info_disp.insert('', 'end', values=list(data.values()))
 
@@ -98,19 +108,24 @@ def cantidad_por_vender():
 
     por_vender.mainloop()
 
-
+#funcion que muestra la informacion de los vendidos
 def cantidad_vendidos():
+    #creamos la ventana y la tabla
     vendidos = Tk()
     vendidos.title("VEHICULOS VENDIDOS")
     vendidos.config(bg="light blue")
     dic_vendidos = []
     dic_no_vendidos = []
+
+    #abrimos el archivo
     with open(pag, 'r') as d:
         no_disponibles = d.readlines()
 
+        #recorremos la informacion del archivo y la guardamos en la primera lista
         for i in no_disponibles:
             dic_vendidos.append(ast.literal_eval(i))
 
+        #recorremos la lista y validamos su estatus y los guardamos el la segunda lista
         for i in dic_vendidos:
             if i['ESTATUS'] == 1:
                 dic_no_vendidos.append(i)
@@ -122,7 +137,8 @@ def cantidad_vendidos():
                          "KILOMETRAJE ",
                          "PRECIO",
                          'ESTATUS')
-
+    
+    #creamos la tabla y la dimensionamos
     info_vend = ttk.Treeview(vendidos, columns=columnas_vendidos, show='headings')
     info_vend.column('CODIGO', width=75)
     info_vend.column('YEAR', width=75)
@@ -131,9 +147,11 @@ def cantidad_vendidos():
     info_vend.column('ESTATUS', width=75)
     info_vend.column('PRECIO', width=100)
 
+    #ordenamos encabezados
     for col in columnas_vendidos:
         info_vend.heading(col, text=col)
 
+    #ingresamos la informacion
     for data in dic_no_vendidos:
         info_vend.insert('', 'end', values=list(data.values()))
 

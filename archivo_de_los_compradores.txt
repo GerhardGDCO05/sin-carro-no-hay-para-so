@@ -1,2 +1,0 @@
-{'CEDULA': '30313726', 'RIF': '303137269', 'CARNET DIPLOMATICO': '081121564', 'PASAPORTE': '062541568', 'NOMBRE': 'Samuel David Hernandez Correa', 'FECHA DE NACIMIENTO': '30052003', 'DIRECCION': 'La pastora AV baralt', 'ESTADO': 'Caracas'}
-{'CEDULA': '29456844', 'RIF': '294568448', 'CARNET DIPLOMATICO': '084657447', 'PASAPORTE': '084657447', 'NOMBRE': 'Carlos Manuel Lopez Perez', 'FECHA DE NACIMIENTO': '12122000', 'DIRECCION': 'Puente llaguno frente a miraflores', 'ESTADO': 'Caracas'}

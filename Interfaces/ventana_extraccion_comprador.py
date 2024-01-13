@@ -1,14 +1,16 @@
+#importamos librerias y archivos
 import tkinter as tk
 from tkinter import ttk
 from archivo.compradores_extraccion import extractInfo
 
-# Simulando la lista de diccionarios
-
-compradoresData = extractInfo()
 
 
+#funcion que crea la tabla y ordena la informacion en la tabla
 def ventana_extraccion_comprador():
+    #llamamos a la funcion que extrae la informacion
+    compradoresData = extractInfo()
 
+    #creamos la ventana
     info_compradores = tk.Tk()
     info_compradores.title("Información de Clientes")
 
@@ -21,7 +23,9 @@ def ventana_extraccion_comprador():
                'FECHA DE NACIMIENTO',
                'DIRECCION',
                'ESTADO')
+    
 
+    #creamos la tabla 
     infocomp = ttk.Treeview(info_compradores, columns=columns, show='headings')
     infocomp.column('CEDULA', width=75)
     infocomp.column('RIF', width=75)
@@ -36,7 +40,7 @@ def ventana_extraccion_comprador():
     for col in columns:
         infocomp.heading(col, text=col)
 
-    # Agregar datos
+    # Agregamos datos
     for data in compradoresData:
         infocomp.insert('', 'end', values=list(data.values()))
 

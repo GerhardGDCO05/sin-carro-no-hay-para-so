@@ -1,3 +1,4 @@
+#importamos las librerias y archivos
 from tkinter import *
 from tkinter import messagebox
 from archivo.Validaciones_ventas import (validarfactura, validarfechacompra,
@@ -5,7 +6,7 @@ from archivo.Validaciones_ventas import (validarfactura, validarfechacompra,
 
 from archivo.ventas_insercion import Data_ventas
 
-
+#funcion que crea la ventana de registro
 def ventana_insertar_ventas():
     insertventas = Tk()
     insertventas.title("REGISTRO DE LAS VENTAS")
@@ -17,6 +18,8 @@ def ventana_insertar_ventas():
     ventasframe = Frame(insertventas)
     ventasframe.pack()
     ventasframe.config(width=200, height=200)
+
+    #creamos las entradas de texto con su titulo
     # ------------factura-----------------------------
     facturalabel = Label(ventasframe, text="FACTURA")
     facturalabel.grid(row=0, column=0, padx=10, pady=10)
@@ -47,7 +50,10 @@ def ventana_insertar_ventas():
     modelo_del_vehiculo.grid(row=4, column=1, padx=10, pady=10)
 
     # ---------------------------------------------------------------------------
+    #funcion de validacion de datos eh implementacion del messagebox
     def validarData_ventas(factura, fecha_compra, cedula_comprador, codigo_comprador, modelo_vehiculo):
+        
+        #condicionales para validar cada dato
         if validarfactura(factura) == False:
             messagebox.showerror('ERROR', 'ERROR EN FACTURA MAXIMO 5 DIGITOS')
             return False
@@ -83,11 +89,14 @@ def ventana_insertar_ventas():
             return False
 
 
-
+        #enviamos los datos ya validados a la funcion que la guarda en el archivo
         Data_ventas(factura, fecha_compra, cedula_comprador, codigo_comprador, modelo_vehiculo)
+        #mensaje de exito
         messagebox.showinfo('LOGRADO', 'REGISTRO EXITOSO')
+        #destruimos la ventana de registro
         insertventas.destroy()
 
+    #boton de guardar
     boton_save_ventas = Button(
         insertventas,
         text='GUARDAR',

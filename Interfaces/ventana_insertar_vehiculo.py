@@ -1,12 +1,11 @@
+#importamos las librerias y archivos necesarios
 from tkinter import messagebox
 from tkinter import *
-
-from archivo.Validaciones_vehiculo import validar_marca, validar_year, validar_modelo, validar_kilometraje, \
-    validar_precio
+from archivo.Validaciones_vehiculo import validar_marca, validar_year, validar_modelo, validar_kilometraje,validar_precio
 from archivo.vehiculo_extraccion import generar_codigo_vehiculo
 from archivo.vehiculo_insercion import insertvehiculos
 
-
+#creamos la ventana de registro
 def ventana_insertar_vehiculo():
     insert_vehi = Tk()
     insert_vehi.title("REGISTRO VEHICULO")
@@ -18,6 +17,8 @@ def ventana_insertar_vehiculo():
     vehiculo = Frame(insert_vehi)
     vehiculo.pack()
     vehiculo.config(width=200, height=200)
+
+    #creamos las entradas de texto con su titulo y las ordenamos
     # ---------------marca-----------------------------
     marcalabel = Label(vehiculo, text='MARCA DEL VEHICULO')
     marcalabel.grid(row=0, column=0, padx=10, pady=10)
@@ -45,8 +46,11 @@ def ventana_insertar_vehiculo():
     precio.grid(row=4, column=1, padx=10, pady=10)
 
     # -------------------------------------------------------------
+    #funcion que valida los datos eh implementacion del messagebox
     def validar_vehiculo(marca, modelo, year, kilometraje, precio):
         global estatus,codigo
+
+        #condicionales que validan cada informacion
         if validar_marca(marca) == False:
             messagebox.showerror('ERROR', 'ERROR EN MARCA \n MAXIMO EN 20 CARACTERES ')
             return False
@@ -67,8 +71,10 @@ def ventana_insertar_vehiculo():
             messagebox.showerror('ERROR', 'ERROR EN EL PRECIO \n')
             return False
         else:
+            #transformamos al formato 999,999.99
             formato_precio = '{:,.2f}'.format(float(precio))
 
+        #validamos todos los datos y generamos el codigo y el estatus de disponibles
         if (validar_marca(marca) == True and validar_modelo(modelo) == True
                 and validar_year(year) == True
                 and validar_kilometraje(kilometraje) == True
@@ -78,11 +84,16 @@ def ventana_insertar_vehiculo():
 
             estatus = 0
 
-
+        #enviamos los datos a la funcion que la guarda en el archivo
         insertvehiculos(codigo, marca, modelo, year, kilometraje, formato_precio, estatus)
+       
+        #mensaje de exito
         messagebox.showinfo('LOGRADO', 'INGRESO EXITOSO')
+       
+        #destruimos la ventana
         insert_vehi.destroy()
 
+    #boton de guardad
     boton_vehiculo = Button(
         insert_vehi,
         text='GUARDAR',

@@ -1,15 +1,18 @@
+# importamos las librerias necesarias y archivos que utilizaremos
+
 import tkinter
 from tkinter import *
 from tkinter import messagebox
-
 from archivo.Validaciones_compradores import (validarcedula, validarcarnet,
                                               validarpasaporte, validarnombre,
                                               validarfecha, validardireccion, validarestado,
                                               validarRif)
 from archivo.compradores_insercion import *
+# ---------------------------------------------------------------------------------------------------------------------------------
 
-
+# funcion   de registro
 def ventana_insertar_comprador():
+    #utilizamos esta funcion para verificar alteraciones en las entradas de texto y habilitar el boton guardar
     def verificar_contenido(*args):
         address = direccion.get('1.0', 'end-1c')
         name = nombre.get('1.0', 'end-1c')
@@ -19,6 +22,8 @@ def ventana_insertar_comprador():
         passport = pasaporte.get()
         fechanaci = fecha.get()
         stade = estado.get('1.0', 'end-1c')
+        
+        #condicional que activa el boton
         if (address.strip() != '' and address.strip() != ' '
                 and name.strip() != '' and name.strip() != ' '
                 and cedu.strip() != '' and cedu.strip() != ' '
@@ -31,7 +36,7 @@ def ventana_insertar_comprador():
             botoncomprador.config(state=tkinter.NORMAL)
         else:
             botoncomprador.config(state=tkinter.DISABLED)
-
+    # creamos la ventana de registro
     datos_comprador = Tk()
     datos_comprador.title("REGISTRO DE LOS COMPRADORES")
     datos_comprador.config(bg="light blue", relief="groove", bd="20")
@@ -43,6 +48,8 @@ def ventana_insertar_comprador():
     datosframe.pack()
     datosframe.config(width=200, height=200)
 
+
+    #creamos las entradas de texto con sus titulos y las ordenamos en filas y columnas
     # ---------------------cedula-----------------------------------------
     cedulalabel = Label(datosframe, text="CEDULA")
     cedulalabel.grid(row=0, column=0, padx=10, pady=10)
@@ -73,7 +80,8 @@ def ventana_insertar_comprador():
     nombre = Text(datosframe, background="light blue", width=16, height=3)
     nombre.grid(row=4, column=1, padx=12, pady=12)
     nombre.bind('<<Modified>>', verificar_contenido)
-
+    
+    #implimentacion del scrollbard
     scroll = Scrollbar(datosframe, command=nombre.yview)
     scroll.grid(row=4, column=2, sticky="nsew")
     nombre.config(yscrollcommand=scroll.set)
@@ -90,6 +98,7 @@ def ventana_insertar_comprador():
     direccion.bind('<<Modified>>', verificar_contenido)
     direccion.grid(row=6, column=1, padx=12, pady=12)
 
+    #implimentacion del scrollbard
     scroll = Scrollbar(datosframe, command=direccion.yview)
     scroll.grid(row=6, column=2, sticky="nsew")
     direccion.config(yscrollcommand=scroll.set)
@@ -100,14 +109,19 @@ def ventana_insertar_comprador():
     estado.grid(row=7, column=1, padx=12, pady=12)
     estado.bind('<<Modified>>', verificar_contenido)
 
+    #implimentacion del scrollbard
     scroll = Scrollbar(datosframe, command=estado.yview)
     scroll.grid(row=7, column=2, sticky="nsew")
     estado.config(yscrollcommand=scroll.set)
 
     # ---------------------------------------------------------------------
 
+    # funcion de validacion
+    
     def validarData(cedula, rif, carnet, pasaporte, nombre_apellido, nacimiento, direccion, estado):
-
+        
+        #codicionales para validar cada dato ingresado
+        #implementacion de messagebox 
         if validarcedula(cedula) == False:
             messagebox.showerror('ERROR', 'ERROR EN CEDULA')
             return False
@@ -147,11 +161,17 @@ def ventana_insertar_comprador():
             messagebox.showerror('ERROR', 'ERROR EN ESTADO \n MAXIMO 15 CARACTERES')
             return False
 
+        #guardamos los datos ya validados y los enviamos a la siguiente funcion para guardarlas en el archivo
         insertData(cedula, rif, carnet, pasaporte,
                    nombre_apellido, nacimiento, direccion, estado)
         messagebox.showinfo('LOGRADO', 'REGISTRO EXITOSO')
+        
+        #destruimos la ventana de registro despues de un registro exitoso
         datos_comprador.destroy()
 
+# --------------------------------------------------------------------------------------------------------------------------------------------
+    
+    # boton de guardar implementacion del lambda
     botoncomprador = Button(
         datos_comprador,
         text="GUARDAR",
